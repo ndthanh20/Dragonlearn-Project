@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Landing space</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="holder">
+        <div class="droppable"></div>
+        <div class="droppable"></div>
+        <div class="bar" draggable="true"></div>
+    </div>
+    <div class="holder">
+        <div class="droppable"></div>
+        <div class="droppable"></div>
+    </div>
+    <p id="chieudai"></p>
+
+
+    <script>
+        let currentDroppable = null;
+        let bar = document.querySelector('.bar');
+
+        //el.addEventListener("mousemove", event => {
+        bar.onmousedown = function (event) {
+
+            event.preventDefault();
+
+            let shiftY = event.clientY - bar.getBoundingClientRect().top;
+            // shiftY not needed, the thumb moves only horizontally
+
+
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('mouseup', onMouseUp);
+
+            function onMouseMove(event) {
+                bar.hidden = true;
+
+                let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+
+                let droppableBelow = elemBelow.closest('.droppable');
+
+                bar.hidden = false;
+
+                if (!elemBelow) return;
+
+                
+
+                
+
+
+                if (currentDroppable != droppableBelow) {
+
+                    if (currentDroppable) {
+
+                        leaveDroppable(currentDroppable);
+
+                    }
+                    currentDroppable = droppableBelow;
+                    if (currentDroppable) {
+                        enterDroppable(currentDroppable);
+                    }
+                }
+
+                let newTop = event.clientY - shiftY - 0;
+
+
+
+                // the pointer is out of slider => lock the thumb within the bounaries
+                if (newTop < 0) {
+                    newTop = 0;
+                }
+                if (newTop > 340) {
+                    newTop = 340;
+                }
+
+                bar.style.top = newTop + 'px';
+
+
+
+                if (bar.style.top == '0px') {
+
+                    droppableBelow.style.visibility = 'visible';
+
+                    showPicture(droppableBelow);
+                    
+                }
+
+
+            }
+            function enterDroppable(elem) {
+
+                elem.style.backgroundImage = "url('44.png')";
+            }
+
+            function leaveDroppable(elem) {
+                elem.style.backgroundColor = "red";
+            }
+
+            function showPicture(elem) {
+                var image_1 = document.createElement("div");
+                
+                image_1.className= 'image_1';
+
+                image_1.style.backgroundImage = "url('51_2.png')";
+            }
+
+
+            function onMouseUp() {
+                document.removeEventListener('mouseup', onMouseUp);
+                document.removeEventListener('mousemove', onMouseMove);
+            }
+
+        };
+
+        bar.ondragstart = function () {
+            return false;
+        };
+    </script>
+</body>
+
+</html>

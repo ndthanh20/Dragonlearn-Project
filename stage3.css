@@ -1,0 +1,46 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+a {
+    text-decoration: none;
+}
+.big {
+    width: 180px;
+}
+.element {
+    position: absolute;
+    display: block;
+    background-color: #c9c9c9;
+    border-radius: 5px;
+    background-image: url(./43.png);
+    top: auto;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+.droppable {
+    background-image: url(./43.png);
+    background-repeat: no-repeat;
+    width: 180px;
+    height: 180px;
+    border-radius: 5px;
+    display: block;
+    background-color: #c9c9c9;
+}
+.holder{
+    display: inline-block;
+    position: relative;
+    width: 180px;
+    height: 360px;
+}
+.bar{
+    width: 180px;
+    height: 20px;
+    display: block;
+    background-image: url(./63.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0px;
+    top: 170px;
+    cursor: pointer;
+}
