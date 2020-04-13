@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8" />
     <title>Landing space</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./stage3.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="holder">
+    <div id="holder" class="holder">
         <div class="droppable"></div>
         <div class="droppable"></div>
         <div class="bar" draggable="true"></div>
@@ -23,90 +23,88 @@
 
     <script>
         let currentDroppable = null;
-        let bar = document.querySelector('.bar');
+        let bar = holder.querySelector('.bar');
 
-        //el.addEventListener("mousemove", event => {
         bar.onmousedown = function (event) {
 
-            event.preventDefault();
-
             let shiftY = event.clientY - bar.getBoundingClientRect().top;
-            // shiftY not needed, the thumb moves only horizontally
+
+            bar.style.position = 'absolute';
 
 
             document.addEventListener('mousemove', onMouseMove);
             document.addEventListener('mouseup', onMouseUp);
 
+            function moveAt(clientY) {
+                if (clientY - shiftY - 8 < 0) {
+                    bar.style.top = 0 + 'px';
+                    return;
+                }
+                if (clientY - shiftY - 8 > 340) {
+                    bar.style.top = 340 + 'px';
+                    return
+                }
+                bar.style.top = clientY - shiftY - 8 + 'px';
+
+            }
+
             function onMouseMove(event) {
-                bar.hidden = true;
+
+                moveAt(event.clientY);
+
+                bar.style.visibility = "hidden";
 
                 let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
 
-                let droppableBelow = elemBelow.closest('.droppable');
 
-                bar.hidden = false;
+                bar.style.visibility = "visible";
 
                 if (!elemBelow) return;
 
-                
-
-                
+                let droppableBelow = elemBelow.closest('.droppable');
 
 
                 if (currentDroppable != droppableBelow) {
-
                     if (currentDroppable) {
 
                         leaveDroppable(currentDroppable);
 
                     }
+
                     currentDroppable = droppableBelow;
+
+                    console.log(currentDroppable);
+
+
                     if (currentDroppable) {
                         enterDroppable(currentDroppable);
                     }
+                    if (bar.style.top == '0px') {
+                        showPicture(currentDroppable);
+
+                    }
                 }
-
-                let newTop = event.clientY - shiftY - 0;
-
-
-
-                // the pointer is out of slider => lock the thumb within the bounaries
-                if (newTop < 0) {
-                    newTop = 0;
-                }
-                if (newTop > 340) {
-                    newTop = 340;
-                }
-
-                bar.style.top = newTop + 'px';
-
-
-
-                if (bar.style.top == '0px') {
-
-                    droppableBelow.style.visibility = 'visible';
-
-                    showPicture(droppableBelow);
-                    
-                }
-
-
             }
             function enterDroppable(elem) {
 
-                elem.style.backgroundImage = "url('44.png')";
+                //elem.style.backgroundImage = "url('./Images/44.png')";
+                elem.style.background = 'pink';
             }
 
             function leaveDroppable(elem) {
-                elem.style.backgroundColor = "red";
+                elem.style.backgroundImage = '';
             }
 
             function showPicture(elem) {
-                var image_1 = document.createElement("div");
-                
-                image_1.className= 'image_1';
 
-                image_1.style.backgroundImage = "url('51_2.png')";
+                document.getElementById("chieudai").innerHTML = "HELLO";
+                var image_1 = document.createElement("div");
+
+                image_1.className = 'image_1';
+
+                image_1.style.backgroundImage = "url('./Images/51_2.png')";
+
+                elem.appendChild(image_1);
             }
 
 
