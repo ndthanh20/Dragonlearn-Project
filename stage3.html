@@ -6,119 +6,56 @@
     <title>Landing space</title>
     <link rel="stylesheet" href="./stage3.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
-<body>
-    <div id="holder" class="holder">
-        <div class="droppable"></div>
-        <div class="droppable"></div>
-        <div class="bar" draggable="true"></div>
+<body class="body"
+    style="background-image: url('https://i.pinimg.com/originals/fc/6e/19/fc6e19f0d91d5f344ce9a0dd6688b1dd.jpg') ; ">
+    <div class="main">
+        <div class="uchiru_head card with_progress">
+            <a class="Back" href="https://google.com">
+                <h4 class="BackH4">Back</h4>
+            </a>
+            <div class="uchiru-head__right-group">
+            </div>
+            <div class="beads-wrapper">
+                <div id="progress">
+                    <div class="inner_progress">
+                        <i class="az_ball_0" id="bead0" style="left: 4px;"></i>
+                        <i class="az_ball_1" id="bead1" style="left: 28px;"></i>
+                        <i class="az_ball_2" id="bead2" style="left: 52px;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scene">
+            <div class="line" style="width: 960px; height: 100px;">
+                <div class="user_speaker with-sound">
+                    <span class="speaker"></span>
+                    <div id="movethebarup" class="string" style="line-height: 100px; height: 100px;">Move the bar
+                        <b>up</b></div>
+                    <div hidden id="movethebardown" class="string" style="line-height: 100px; height: 100px;">Move the
+                        bar <b>down</b></div>
+                </div>
+            </div>
+        </div>
+        <div class="line" style="margin-top: 10px; width: 960px; height: 460px;">
+            <div id="holder_1" class="holder" style="margin-right: -5px;">
+                <div id="first" class="droppable"></div>
+                <div id="second" class="droppable"></div>
+                <div class="bar" draggable="true"></div>
+            </div>
+            <div id="holder_2" class="holder">
+                <div class="droppable"></div>
+                <div class="droppable"></div>
+            </div>
+            <p id="chieudai"></p>
+        </div>
     </div>
-    <div class="holder">
-        <div class="droppable"></div>
-        <div class="droppable"></div>
     </div>
-    <p id="chieudai"></p>
-
-
-    <script>
-        let currentDroppable = null;
-        let bar = holder.querySelector('.bar');
-
-        bar.onmousedown = function (event) {
-
-            let shiftY = event.clientY - bar.getBoundingClientRect().top;
-
-            bar.style.position = 'absolute';
-
-
-            document.addEventListener('mousemove', onMouseMove);
-            document.addEventListener('mouseup', onMouseUp);
-
-            function moveAt(clientY) {
-                if (clientY - shiftY - 8 < 0) {
-                    bar.style.top = 0 + 'px';
-                    return;
-                }
-                if (clientY - shiftY - 8 > 340) {
-                    bar.style.top = 340 + 'px';
-                    return
-                }
-                bar.style.top = clientY - shiftY - 8 + 'px';
-
-            }
-
-            function onMouseMove(event) {
-
-                moveAt(event.clientY);
-
-                bar.style.visibility = "hidden";
-
-                let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
-
-
-                bar.style.visibility = "visible";
-
-                if (!elemBelow) return;
-
-                let droppableBelow = elemBelow.closest('.droppable');
-
-
-                if (currentDroppable != droppableBelow) {
-                    if (currentDroppable) {
-
-                        leaveDroppable(currentDroppable);
-
-                    }
-
-                    currentDroppable = droppableBelow;
-
-                    console.log(currentDroppable);
-
-
-                    if (currentDroppable) {
-                        enterDroppable(currentDroppable);
-                    }
-                    if (bar.style.top == '0px') {
-                        showPicture(currentDroppable);
-
-                    }
-                }
-            }
-            function enterDroppable(elem) {
-
-                //elem.style.backgroundImage = "url('./Images/44.png')";
-                elem.style.background = 'pink';
-            }
-
-            function leaveDroppable(elem) {
-                elem.style.backgroundImage = '';
-            }
-
-            function showPicture(elem) {
-
-                document.getElementById("chieudai").innerHTML = "HELLO";
-                var image_1 = document.createElement("div");
-
-                image_1.className = 'image_1';
-
-                image_1.style.backgroundImage = "url('./Images/51_2.png')";
-
-                elem.appendChild(image_1);
-            }
-
-
-            function onMouseUp() {
-                document.removeEventListener('mouseup', onMouseUp);
-                document.removeEventListener('mousemove', onMouseMove);
-            }
-
-        };
-
-        bar.ondragstart = function () {
-            return false;
-        };
-    </script>
+    <script src="stage3.js"> </script>
 </body>
 
 </html>
