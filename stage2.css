@@ -122,3 +122,11 @@ a {
     display: inline-block;
     transform: rotate(180deg);
 }
+.question{
+    position: absolute;
+    top: 170px;
+    height: 60px;
+    font-size: 36px;
+    text-align: left;
+    line-height: 40px;
+}
