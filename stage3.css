@@ -52,7 +52,9 @@ a {
     left: 0px;
     top: 170px;
     cursor: pointer;
+
 }
+
 .scene{
     position: relative;
     min-height: 100px;
@@ -135,4 +137,17 @@ a {
     margin-left:17%;
     margin-top:50px;
     background-color: rgb(255, 255, 255);
+}
+.image_1{
+    position: relative;
+    
+}
+@keyframes sprite_1 {
+    from {top: 0px; }
+    to {top: 90px; }
+}
+
+@keyframes sprite_2 {
+    from {top: 0px;}
+    to {top: -90px; }
 }
