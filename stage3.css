@@ -151,3 +151,7 @@ a {
     from {top: 0px;}
     to {top: -90px; }
 }
+@keyframes ball1{
+    from {left: 52px;}
+    to {left : 440px;}
+}

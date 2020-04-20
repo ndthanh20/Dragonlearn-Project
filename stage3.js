@@ -91,6 +91,9 @@ bar.onmousedown = function (event) {
 
         elem.append(image_1);
 
+        elem.style.visibility = "hidden";
+
+        image_1.style.visibility = "visible";
 
     }
 
@@ -102,6 +105,13 @@ bar.onmousedown = function (event) {
 
         if (endTask) {
 
+            var x=document.getElementById("task_1").querySelectorAll(".droppable");
+
+            for(var i=0 ; i<x.length; i++){
+                x[i].style.visibility = "hidden";
+            }
+
+            console.log(document.getElementById("task_1").querySelectorAll(".droppable"));
 
             document.getElementById("sprite_1").style.animationName = "sprite_1";
 
@@ -109,13 +119,30 @@ bar.onmousedown = function (event) {
 
             document.getElementById("sprite_1").style.animationFillMode = "both";
 
+            document.getElementById("sprite_1").style.animationTimingFunction = "ease";
+
             document.getElementById("sprite_2").style.animationName = "sprite_2";
 
-            document.getElementById("sprite_2").style.animationDuration = "2.5s";
+            document.getElementById("sprite_2").style.animationDuration = "2s";
 
             document.getElementById("sprite_2").style.animationFillMode = "both";
 
             document.getElementById("sprite_2").style.animationTimingFunction = "ease";
+
+
+            document.getElementById("bead2").style.animationName = "ball1";
+
+            document.getElementById("bead2").style.animationDelay = "2s";
+
+            document.getElementById("bead2").style.webkitAnimationDuration = "2s";
+
+            document.getElementById("bead2").style.animationTimingFunction = "ease";
+
+            document.getElementById("bead2").style.animationFillMode = "both";
+
+            document.getElementById("holder_1").querySelector("#first").style.visibility = "hiiden";
+
+
             onMouseUp();
 
             return;
@@ -125,7 +152,6 @@ bar.onmousedown = function (event) {
         bar.style.visibility = "hidden";
 
         let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
-
 
         bar.style.visibility = "visible";
 
@@ -158,7 +184,7 @@ bar.onmousedown = function (event) {
     function enterDroppable(elem) {
 
         //elem.style.backgroundImage = "url('./Images/44.png')";
-        elem.style.background = 'yellow';
+        elem.style.background = '#ffffcc';
     }
 
     function leaveDroppable(elem) {
