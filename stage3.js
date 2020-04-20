@@ -1,13 +1,15 @@
 let currentDroppable = null;
-let bar = holder_1.querySelector('.bar');
+let bar = holder_1.querySelector('.bar1');
 let isPicture = false;
 let endTask = false;
 let count = 1;
+var sceneNumber=0;
 
 bar.onmousedown = function (event) {
 
     let shiftY = event.clientY - bar.getBoundingClientRect().top;
 
+    console.log(bar);
 
     bar.style.position = 'absolute';
 
@@ -105,13 +107,13 @@ bar.onmousedown = function (event) {
 
         if (endTask) {
 
-            var x=document.getElementById("task_1").querySelectorAll(".droppable");
+            var x=document.getElementById("task_1").querySelectorAll(".droppable1");
 
             for(var i=0 ; i<x.length; i++){
                 x[i].style.visibility = "hidden";
             }
 
-            console.log(document.getElementById("task_1").querySelectorAll(".droppable"));
+            console.log(document.getElementById("task_1").querySelectorAll(".droppable1"));
 
             document.getElementById("sprite_1").style.animationName = "sprite_1";
 
@@ -142,6 +144,9 @@ bar.onmousedown = function (event) {
 
             document.getElementById("holder_1").querySelector("#first").style.visibility = "hiiden";
 
+            //document.getElementById("task_1").style.display = "none";
+
+            //document.getElementById("task_2").style.display = "block";
 
             onMouseUp();
 
@@ -157,7 +162,7 @@ bar.onmousedown = function (event) {
 
         if (!elemBelow) return;
 
-        let droppableBelow = elemBelow.closest('.droppable');
+        let droppableBelow = elemBelow.closest('.droppable1');
 
 
         if (currentDroppable != droppableBelow) {
@@ -201,6 +206,19 @@ bar.onmousedown = function (event) {
     }
 
 };
+
+/*function showNextScene(){
+    var startDisplay = document.getElementById("start");
+    /*if(sceneNumber==0){
+      $(document).ready(function(){
+        var x = document.getElementById("scene1_1");
+          x.style.display = "block";
+          startDisplay.style.display="none";
+      });
+    }
+  }
+  startDisplay.style.display="none";
+}*/
 
 bar.ondragstart = function () {
     return false;
