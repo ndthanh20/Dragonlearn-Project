@@ -23,10 +23,10 @@ a {
     text-align: center;
     margin-left: 0%;
 }
-.droppable {
+.droppable1 {
     background-image: url(./Images/43.png);
     background-repeat: no-repeat;
-    width: 180px;
+    widows: 180px;
     height: 180px;
     border-radius: 5px;
     display: block;
@@ -35,13 +35,31 @@ a {
     background-position-y: 0px;
     
 }
-.holder{
+.droppable2 {
+    background-image: url(./Images/43.png);
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 180px;
+    border-radius: 5px;
+    display: block;
+    background-color: #c9c9c9;
+    background-position-x: 0px;
+    background-position-y: 0px;
+    
+}
+.holder1{
     display: inline-block;
     position: relative;
     width: 180px;
     height: 360px;
 }
-.bar{
+.holder2{
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 360px;
+}
+.bar1{
     width: 180px;
     height: 20px;
     display: block;
@@ -52,7 +70,9 @@ a {
     left: 0px;
     top: 170px;
     cursor: pointer;
+
 }
+
 .scene{
     position: relative;
     min-height: 100px;
@@ -135,4 +155,54 @@ a {
     margin-left:17%;
     margin-top:50px;
     background-color: rgb(255, 255, 255);
+}
+.image_1{
+    position: relative;
+    
+}
+@keyframes sprite_1 {
+    from {top: 0px; }
+    to {top: 90px; }
+}
+
+@keyframes sprite_2 {
+    from {top: 0px;}
+    to {top: -90px; }
+}
+@keyframes ball1{
+    from {left: 52px;}
+    to {left : 440px;}
+}
+.btn_play{
+    position: absolute;
+    z-index: 100;
+    top: 60%;
+    left: 50%;
+    width: 246px;
+    height: 246px;
+    margin: -166px 0 0 -166px;
+    border-radius: 200px;
+    background-color: rgba(184,0,161,.1);
+    border: 43px solid rgba(255,255,255,.75);
+    -webkit-transition: linear .3s;
+    transition: linear .2s;
+    cursor: pointer;
+}
+.triangle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 112px;
+    height: 113px;
+    background: url(./Images/25.png) no-repeat;
+    margin: -57px 0 0 -35px;
+}
+.triangle span{
+    position: absolute;
+    top: 50%;
+    font-size: 20px;
+    line-height: 20px;
+    margin-top: -10px;
+    left: 18px;
+    color: #fff;
 }
