@@ -9,8 +9,6 @@ bar.onmousedown = function (event) {
 
     let shiftY = event.clientY - bar.getBoundingClientRect().top;
 
-    console.log(bar);
-
     bar.style.position = 'absolute';
 
     document.addEventListener('mousemove', onMouseMove);
@@ -105,6 +103,9 @@ bar.onmousedown = function (event) {
 
         if (endTask) {
 
+            
+            onMouseUp();
+
             var x=document.getElementById("task_1").querySelectorAll(".droppable1");
 
             for(var i=0 ; i<x.length; i++){
@@ -148,7 +149,6 @@ bar.onmousedown = function (event) {
             },3000);
             
 
-            onMouseUp();
 
             return;
         }

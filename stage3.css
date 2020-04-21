@@ -29,7 +29,7 @@ a {
 .droppable2 {
     background-image: url(./Images/43.png);
     background-repeat: no-repeat;
-    width: 100px;
+    width: 120px;
     height: 180px;
     border-radius: 5px;
     display: block;
@@ -47,7 +47,7 @@ a {
 .holder2{
     display: inline-block;
     position: relative;
-    width: 100px;
+    width: 120px;
     height: 360px;
 }
 .bar1{
@@ -63,7 +63,7 @@ a {
     cursor: pointer;
 }
 .bar2{
-    width: 100px;
+    width: 120px;
     height: 20px;
     display: block;
     background-image: url(./Images/63.png);
