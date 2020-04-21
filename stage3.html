@@ -13,6 +13,16 @@
 
 <body class="body"
     style="background-image: url('https://i.pinimg.com/564x/7d/d2/40/7dd24065c8228827b1ca0df6e7378049.jpg') ; ">
+
+    <audio id="up">
+        <source src="./Audio/movethebarup.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="down">
+        <source src="./Audio/movethebardown.mp3" type="audio/mpeg">
+         Your browser does not support the audio element.
+    </audio>
+
     <div class="main">
         <div class="uchiru_head card with_progress">
             <a class="Back" href="index.html">
@@ -32,8 +42,9 @@
         </div>
         <div class="scene">
             <div class="line" style="width: 960px; height: 100px;">
-                <div class="user_speaker with-sound">
-                    <span class="speaker"></span>
+                <div class="user_speaker with-sound" onclick="playSound()">
+                    <div class="speaker" onclick="playSound()">
+                    </div>
                     <div id="movethebarup" class="string" style="line-height: 100px; height: 100px;">Move the bar
                         <b>up</b></div>
                     <div hidden id="movethebardown" class="string" style="line-height: 100px; height: 100px;">Move the

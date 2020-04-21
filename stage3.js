@@ -209,3 +209,13 @@ bar.onmousedown = function (event) {
 bar.ondragstart = function () {
     return false;
 };
+function playSound(){
+    if (!document.getElementById("movethebarup").hidden){
+        var x = document.getElementById("up");
+        x.play();
+    }
+    else{
+        var x = document.getElementById("down");
+        x.play();
+    }
+}
