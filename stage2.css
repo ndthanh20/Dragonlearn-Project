@@ -37,8 +37,6 @@ a {
     border-radius: 50%;
     background-position-x: 0px;
     background-position-y: 0px;
-    margin-bottom: 15px;
-    margin-top: 5px;
 }
 .string{
     font-size: 50px;
@@ -129,4 +127,50 @@ a {
     font-size: 36px;
     text-align: left;
     line-height: 40px;
+}
+.b_next_font_cr:not(.b_next_case_uc) {
+    height: 41px;
+    padding: 2px;
+    border-radius: 5px;
+}
+.pointerhand {
+    cursor: pointer;
+}
+.b_next__placeholder {
+    display: block;
+    white-space: nowrap;
+    font-size: 24px;
+    line-height: 28px;
+    -webkit-font-smoothing: antialised;
+    padding-top: 7px;
+    padding-right: 0px;
+    padding-bottom: 6px;
+    padding-left: 0px;
+}
+.b_next__placeholder {
+    position: relative;
+    margin-left: 1px;
+    margin-right: 38px;
+}
+
+.b_next__icon{
+    display: block;
+    position: absolute;
+    width: 31px;
+    height: 31px;
+    top: 8px;
+    right: 2px;
+}
+.b_next__icon {
+    background-image: url('./Images/56.svg');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+.button {
+    z-index: 0;
+    font-size: 30px;
+    vertical-align: top;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    transition-delay: 0s;
 }
