@@ -144,9 +144,12 @@ bar.onmousedown = function (event) {
 
             document.getElementById("holder_1").querySelector("#first").style.visibility = "hiiden";
 
-            //document.getElementById("task_1").style.display = "none";
-
-            //document.getElementById("task_2").style.display = "block";
+            
+            setTimeout(function(){
+                document.getElementById("task_1").style.display = "none";
+                document.getElementById("task_2").style.display = "block";
+            },3000);
+            
 
             onMouseUp();
 
@@ -179,11 +182,7 @@ bar.onmousedown = function (event) {
             if (currentDroppable) {
                 enterDroppable(currentDroppable);
             }
-            //console.log(currentDroppable);
-
-            /*if(bar.style.top == '340px'){
-
-            }*/
+           
         }
     }
     function enterDroppable(elem) {
@@ -206,19 +205,6 @@ bar.onmousedown = function (event) {
     }
 
 };
-
-/*function showNextScene(){
-    var startDisplay = document.getElementById("start");
-    /*if(sceneNumber==0){
-      $(document).ready(function(){
-        var x = document.getElementById("scene1_1");
-          x.style.display = "block";
-          startDisplay.style.display="none";
-      });
-    }
-  }
-  startDisplay.style.display="none";
-}*/
 
 bar.ondragstart = function () {
     return false;
