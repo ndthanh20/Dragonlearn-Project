@@ -13,8 +13,6 @@ bar.onmousedown = function (event) {
 
     bar.style.position = 'absolute';
 
-    bar.style.zIndex = 1;
-
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
 
@@ -112,9 +110,6 @@ bar.onmousedown = function (event) {
             for(var i=0 ; i<x.length; i++){
                 x[i].style.visibility = "hidden";
             }
-
-            console.log(document.getElementById("task_1").querySelectorAll(".droppable1"));
-
             document.getElementById("sprite_1").style.animationName = "sprite_1";
 
             document.getElementById("sprite_1").style.animationDuration = "2s";
@@ -148,6 +143,8 @@ bar.onmousedown = function (event) {
             setTimeout(function(){
                 document.getElementById("task_1").style.display = "none";
                 document.getElementById("task_2").style.display = "block";
+                bar = holder_1_2.querySelector('.bar2');
+                console.log(bar);
             },3000);
             
 
