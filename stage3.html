@@ -13,6 +13,16 @@
 
 <body class="body"
     style="background-image: url('https://i.pinimg.com/564x/7d/d2/40/7dd24065c8228827b1ca0df6e7378049.jpg') ; ">
+
+    <audio id="up">
+        <source src="./Audio/movethebarup.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="down">
+        <source src="./Audio/movethebardown.mp3" type="audio/mpeg">
+         Your browser does not support the audio element.
+    </audio>
+
     <div class="main">
         <div class="uchiru_head card with_progress">
             <a class="Back" href="index.html">
@@ -32,8 +42,9 @@
         </div>
         <div class="scene">
             <div class="line" style="width: 960px; height: 100px;">
-                <div class="user_speaker with-sound">
-                    <span class="speaker"></span>
+                <div class="user_speaker with-sound" onclick="playSound()">
+                    <div class="speaker" onclick="playSound()">
+                    </div>
                     <div id="movethebarup" class="string" style="line-height: 100px; height: 100px;">Move the bar
                         <b>up</b></div>
                     <div hidden id="movethebardown" class="string" style="line-height: 100px; height: 100px;">Move the
@@ -46,7 +57,6 @@
         <div class="line" id="task_1" style="margin-top: 10px; width: 960px; height: 460px;">
             <div id="holder_1" class="holder1" style="margin-right: -5px;">
                 <div id="first" class="droppable1">
-
                 </div>
                 <div id="second" class="droppable1"></div>
                 <div class="bar1" draggable="true"></div>
@@ -56,38 +66,34 @@
                 <div class="droppable1"></div>
             </div>
         </div>
-        <div  hidden class="line" id="task_2" style="margin-top: 10px; width: 960; height: 460px;">
-            <div id="holder_1_2" class="holder2">
+        <div class="line" id="task_2" style="margin-top: 10px; width: 960; height: 460px; display: none;">
+            <div id="holder_1_2" class="holder2" style="margin-right: -5px;">
                 <div id="first" class="droppable2"></div>
                 <div id="second" class="droppable2"></div>
                 <div class="bar2" draggable="true"></div>
             </div>
-            <div id="holder_2_2" class="holder2">
+            <div id="holder_2_2" class="holder2" style="margin-right: -5px;"> 
                 <div id="first" class="droppable2"></div>
                 <div id="second" class="droppable2"></div>
             </div>
-            <div id="holder_3_2" class="holder2">
+            <div id="holder_3_2" class="holder2" style="margin-right: -5px;">
                 <div id="first" class="droppable2"></div>
                 <div id="second" class="droppable2"></div>
             </div>
-            <div id="holder_4_2" class="holder2">
+            <div id="holder_4_2" class="holder2" style="margin-right: -5px;">
                 <div id="first" class="droppable2"></div>
                 <div id="second" class="droppable2"></div>
             </div>
-            <div id="holder_5_2" class="holder2">
+            <div id="holder_5_2" class="holder2" style="margin-right: -5px;">
                 <div id="first" class="droppable2"></div>
                 <div id="second" class="droppable2"></div>
             </div>
-            <div id="holder_6_2" class="holder2">
+            <div id="holder_6_2" class="holder2" style="margin-right: -5px;">
                 <div id="first" class="droppable2"></div>
                 <div id="second" class="droppable2"></div>
             </div>
         </div>
-        <!--<div class="btn_play" onClick="showNextScene()">
-            <div class="triangle">
-                <span>start</span>
-            </div>
-        </div>-->
+        
     </div>
     <script src="stage3.js"> </script>
 </body>

@@ -9,11 +9,7 @@ bar.onmousedown = function (event) {
 
     let shiftY = event.clientY - bar.getBoundingClientRect().top;
 
-    console.log(bar);
-
     bar.style.position = 'absolute';
-
-    bar.style.zIndex = 1;
 
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
@@ -107,14 +103,14 @@ bar.onmousedown = function (event) {
 
         if (endTask) {
 
+            
+            onMouseUp();
+
             var x=document.getElementById("task_1").querySelectorAll(".droppable1");
 
             for(var i=0 ; i<x.length; i++){
                 x[i].style.visibility = "hidden";
             }
-
-            console.log(document.getElementById("task_1").querySelectorAll(".droppable1"));
-
             document.getElementById("sprite_1").style.animationName = "sprite_1";
 
             document.getElementById("sprite_1").style.animationDuration = "2s";
@@ -144,11 +140,15 @@ bar.onmousedown = function (event) {
 
             document.getElementById("holder_1").querySelector("#first").style.visibility = "hiiden";
 
-            //document.getElementById("task_1").style.display = "none";
+            
+            setTimeout(function(){
+                document.getElementById("task_1").style.display = "none";
+                document.getElementById("task_2").style.display = "block";
+                bar = holder_1_2.querySelector('.bar2');
+                console.log(bar);
+            },3000);
+            
 
-            //document.getElementById("task_2").style.display = "block";
-
-            onMouseUp();
 
             return;
         }
@@ -179,11 +179,7 @@ bar.onmousedown = function (event) {
             if (currentDroppable) {
                 enterDroppable(currentDroppable);
             }
-            //console.log(currentDroppable);
-
-            /*if(bar.style.top == '340px'){
-
-            }*/
+           
         }
     }
     function enterDroppable(elem) {
@@ -207,19 +203,16 @@ bar.onmousedown = function (event) {
 
 };
 
-/*function showNextScene(){
-    var startDisplay = document.getElementById("start");
-    /*if(sceneNumber==0){
-      $(document).ready(function(){
-        var x = document.getElementById("scene1_1");
-          x.style.display = "block";
-          startDisplay.style.display="none";
-      });
-    }
-  }
-  startDisplay.style.display="none";
-}*/
-
 bar.ondragstart = function () {
     return false;
 };
+function playSound(){
+    if (!document.getElementById("movethebarup").hidden){
+        var x = document.getElementById("up");
+        x.play();
+    }
+    else{
+        var x = document.getElementById("down");
+        x.play();
+    }
+}
