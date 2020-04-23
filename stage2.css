@@ -128,32 +128,73 @@ a {
     text-align: left;
     line-height: 40px;
 }
-.b_next_font_cr:not(.b_next_case_uc) {
+ .btn_next.btn_next_kind_link.btn_next_font_cr:not(.btn_next_case_uc) {
     height: 41px;
     padding: 2px;
     border-radius: 5px;
 }
+ .button.btn_next {
+    position: relative;
+}
+ .button {
+    
+    z-index: 0;
+    font-size: 30px;
+    vertical-align: top;
+    transition: box-shadow ease-out .3s;
+}
 .pointerhand {
     cursor: pointer;
 }
-.b_next__placeholder {
+
+
+
+.btn_next.btn_next_kind_link.btn_next_font_cr:not(.btn_next_case_uc) .btn_next__placeholder,  .btn_next.btn_next_kind_link.btn_next_font_cr:not(.btn_next_case_uc) .btn_next__text {
     display: block;
     white-space: nowrap;
     font-size: 24px;
     line-height: 28px;
-    -webkit-font-smoothing: antialised;
-    padding-top: 7px;
-    padding-right: 0px;
-    padding-bottom: 6px;
-    padding-left: 0px;
+    -webkit-font-smoothing: antialiased;
+    padding: 7px 0 6px;
 }
-.b_next__placeholder {
+.btn_next.btn_next_kind_link.btn_next_font_cr:not(.btn_next_case_uc) .btn_next__placeholder {
     position: relative;
     margin-left: 1px;
     margin-right: 38px;
 }
+ 
+ .button {
+    z-index: 0;
+    vertical-align: top;
+    transition: box-shadow ease-out .3s;
+}
 
-.b_next__icon{
+
+
+ .btn_next.btn_next_kind_link.btn_next_font_cr:not(.btn_next_case_uc) .btn_next__text {
+    display: block;
+    white-space: nowrap;
+    font-size: 24px;
+    line-height: 28px;
+    -webkit-font-smoothing: antialiased;
+    padding: 7px 0 6px;
+}
+ .btn_next.btn_next_kind_link.btn_next_font_cr:not(.btn_next_case_uc) .btn_next__text {
+    position: absolute;
+    left: 3px;
+    top: 2px;
+}
+ .btn_next.btn_next_kind_link.btn_next_color_blue .btn_next__text {
+    color: #6ec3e2;
+}
+ .button {
+    z-index: 0;
+    vertical-align: top;
+    transition: box-shadow ease-out .3s;
+}
+
+
+ .btn_next.btn_next_kind_link.btn_next_font_cr:not(.btn_next_case_uc) .btn_next__icon {
     display: block;
     position: absolute;
     width: 31px;
@@ -161,16 +202,17 @@ a {
     top: 8px;
     right: 2px;
 }
-.b_next__icon {
-    background-image: url('./Images/56.svg');
+.btn_next.btn_next_kind_link.btn_next_color_blue .btn_next__icon {
+    background-image: url("56.svg");
     background-repeat: no-repeat;
     background-position: 0 0;
 }
-.button {
+ .button {
     z-index: 0;
     font-size: 30px;
     vertical-align: top;
-    transition-duration: 0.3s;
-    transition-timing-function: ease-out;
-    transition-delay: 0s;
+    transition: box-shadow ease-out .3s;
+}
+* {
+    -webkit-tap-highlight-color: transparent;
 }
