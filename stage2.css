@@ -205,7 +205,8 @@ a {
 .btn_next.btn_next_kind_link.btn_next_color_blue .btn_next__icon {
     background-image: url("56.svg");
     background-repeat: no-repeat;
-    background-position: 0 0;
+    background-position-x: 0px;
+    background-position-y: 0px;
 }
  .button {
     z-index: 0;
