@@ -1,0 +1,83 @@
+[33mcommit c84a3f13addf7adaa1ef7e0d9329deae7f644d28[m[33m ([m[1;36mHEAD -> [m[1;32mstage3[m[33m, [m[1;31morigin/stage3[m[33m)[m
+Author: Nguyen Thanh <ndthanh20@gmail.com>
+Date:   Tue Apr 21 11:26:47 2020 +0700
+
+    Add images_2 to Images folder
+
+[33mcommit 3d5502231ae6d9d60de81dd81e327b641e742259[m
+Author: Nguyen Thanh <ndthanh20@gmail.com>
+Date:   Tue Apr 21 11:02:01 2020 +0700
+
+    added a bar to the second task and revised the interface of cells
+
+[33mcommit 62d3d7cb15438bb3d3d3cf134096b8061c1a196f[m
+Author: Nguyen Thanh <ndthanh20@gmail.com>
+Date:   Tue Apr 21 10:27:06 2020 +0700
+
+    Stage 3: Add Audio files and add the sound pronunciation when click speaker icon
+
+[33mcommit 544dc88b5c559f7d90c26ef707347db1e188cebc[m
+Author: Nguyen Thanh <ndthanh20@gmail.com>
+Date:   Tue Apr 21 10:03:41 2020 +0700
+
+    Stage 3: Finish mission to change another task
+
+[33mcommit 1a3294661931adae030b7a4e8bd6734d0e9655bd[m
+Author: Nguyen Thanh <ndthanh20@gmail.com>
+Date:   Tue Apr 21 01:05:45 2020 +0700
+
+    Stage 3: Task2 layout is designed
+
+[33mcommit c6ec0ba99bc144d946178c93a75139021b9864c1[m
+Author: Nguyen Thanh <ndthanh20@gmail.com>
+Date:   Mon Apr 20 21:35:03 2020 +0700
+
+    Stage 3: Disappear the squares after merge into picture
+
+[33mcommit b0da70f74937a51d6900b6e467f943e4b678915d[m
+Author: Nguyen Thanh <ndthanh20@gmail.com>
+Date:   Sun Apr 19 17:17:21 2020 +0700
+
+    Add backgroundimages into Images folder
+
+[33mcommit 9938dd2c4bdc5253f3e3a1e9185837e16bef0029[m
+Author: Nguyen Thanh <ndthanh20@gmail.com>
+Date:   Sun Apr 19 17:16:24 2020 +0700
+
+    Modified code to merge two images into one image
+
+[33mcommit 2765bc11e00a7fc0f9bc240167db6dbfa79c99df[m
+Author: Nguyen Thanh <ndthanh20@gmail.com>
+Date:   Tue Apr 14 12:31:05 2020 +0700
+
+    Fix drag bar, update change bar animation, update stage
+
+[33mcommit 9f5da380cc4b47abb670ceefb4ee8d111213c34c[m
+Author: Nguyen Thanh <ndthanh20@gmail.com>
+Date:   Mon Apr 13 17:16:38 2020 +0700
+
+    Update Bar' move
+
+[33mcommit 5be25797d0cfabf769edcfc730e647d5aaddd89e[m
+Author: Nguyen Thanh <ndthanh20@gmail.com>
+Date:   Mon Apr 13 10:23:03 2020 +0700
+
+    Add image for Stage 3
+
+[33mcommit eb42ed7e11cde7193eaba349d3b989e56cda5dcb[m
+Author: Nguyen Thanh <ndthanh20@gmail.com>
+Date:   Mon Apr 13 01:44:01 2020 +0700
+
+    HTML and CSS stage 3
+
+[33mcommit 5a42991f234ac3e60e59d350310b9fa7e34c24ab[m[33m ([m[1;32mmaster[m[33m)[m
+Author: Nguyen Thanh <ndthanh20@gmail.com>
+Date:   Tue Apr 7 11:20:31 2020 +0700
+
+    Second commit: Change images names and edit htlm file
+
+[33mcommit a85ef065e1dc43c399c448d3e240abdbbf5dd798[m
+Author: Nguyen Thanh <ndthanh20@gmail.com>
+Date:   Tue Apr 7 11:06:50 2020 +0700
+
+    First project commit. Start with main screen
