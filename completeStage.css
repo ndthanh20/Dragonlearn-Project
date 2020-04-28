@@ -1,0 +1,36 @@
+.main{
+    display: block;
+    width: 960px;
+    height: 600px;
+}
+.page-content{
+    text-align: center;
+    width: 100%;
+    position: absolute;
+}
+.card-complete-title{
+    font-size: 32px;
+    line-height: 32px;
+    font-family: "CirceRounded-Alt-Bold", sans-serif, sans-serif;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.card-complete-card{
+    height: 290px;
+    margin-bottom: 20px;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-image: url('./Images/complete-card-21a84b96681981b0362780d2af61cf19.png');
+}
+.card-complete-button{
+    text-align: center;
+}
+.card-complete-button a{
+    font-size: 29px;
+    text-decoration: none;
+    background: #66c3e6;
+    color: white;
+    display: inline-block;
+    padding: 12px 20px 8px;
+    border-radius: 7px
+}

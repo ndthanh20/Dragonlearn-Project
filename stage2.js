@@ -150,6 +150,7 @@ var control = (function () {
                 })
             }, 1000)
             setTimeout(function () {
+                if(number==4) window.location.href = 'completeStage.html';
                 count = 0;
                 document.querySelector(".down").style.display = "none";
                 document.querySelector(".btn_OK_down").style.backgroundColor = "#6ec3e2";
