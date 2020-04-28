@@ -1,14 +1,40 @@
 body{
     font-family: 'Open Sans', sans-serif;
+    background-image: url('https://i.pinimg.com/originals/fc/6e/19/fc6e19f0d91d5f344ce9a0dd6688b1dd.jpg'); 
+    background-size: contain;
+    background-repeat: none; 
+    background-size: auto;
 }
-.main{
-    width:960px;
-    height: 600px;
-    border: 1px solid rgb(177, 177, 177);
-    border-radius: 10px;
-    margin-left:17%;
-    margin-top:50px;
-    background-color: rgb(255, 255, 255);
+.content {
+    padding: 4px 0;
+}
+.scene{
+    text-align: center;
+    line-height: 1.5;
+    filter: blur(2px);
+    position: relative;
+    min-height: 560px;
+    box-sizing: border-box;
+}
+.main {
+    z-index: 0;
+    position: relative;
+    margin: 15px auto 20px;
+    width: 960px;
+    min-height: 600px;
+    border-radius: 15px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 19px 0px rgba(0,0,0,0.5), 0px 2px 4px 0px rgba(0,0,0,0.5);
+}
+.board {
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 1px;
+    margin-top: -1px;
+    line-height: 1.5;
+    width: 960px;
+    min-height: 483px;
 }
 a {
     text-decoration: none;
@@ -57,30 +83,35 @@ a {
     top: 3px;
     transition: left 200ms linear;
     -webkit-transition: left 200ms linear;
+    
 }
-.scene{
-    position: relative;
-    width: 960px;
-    min-height: 483px;
-    margin-bottom: 50px;
-    margin-left: 0%;
-}
+
 .line{
     position: relative;
     display: block;
     text-align: center;
     margin-left: 0%;
-}
-.bg-bug{
-    width: 220px;
-    height: 540px;
-    background-image: url('./Images/94.png');
+    filter: blur(2px);
 }
 .bg{
     position: absolute;
     z-index: 1;
     left: 90px;
     display: inline-block;
+    width: 220px;
+    height: 540px;
+}
+.bg-bug{
+    background-image: url('./Images/94.png');
+}
+.bg-fly{
+    background-image: url('./Images/96.png');
+}
+.bg-ball{
+    background-image: url('./Images/88.png');
+}
+.bg-ballon{
+    background-image: url('./Images/90.png');
 }
 .bug{
     width: 140px;
@@ -90,17 +121,58 @@ a {
     bottom: 0px;
     left: 30px;
     display: inline-block;
-    animation-name: move;
-    animation-timing-function: linear;
-    animation-fill-mode: forwards;
     animation-delay: 0s;
     animation-iteration-count: 1;
     animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+.fly{
+    width: 140px;
+    background-image: url('./Images/72.png');
+    position: absolute;
+    z-index: 3;
+    top: 0px;
+    left: 30px;
+    display: inline-block;
+    transform: rotate(180deg);
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+.ballon{
+    width: 140px;
+    background-image: url('./Images/66.png');
+    position: absolute;
+    z-index: 3;
+    bottom: 0px;
+    left: 30px;
+    display: inline-block;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+.basket{
+    width: 140px;
+    background-image: url('./Images/62.png');
+    position: absolute;
+    z-index: 3;
+    top: 0px;
+    left: 80px;
+    display: inline-block;
+    transform: rotate(180deg);
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
 }
 .question{
     position: absolute;
     top: 170px;
     height: 60px;
+    left: 420px;
+    display: block;
     font-size: 36px;
     text-align: left;
     line-height: 40px;
@@ -131,6 +203,7 @@ a {
     line-height: 28px;
     -webkit-font-smoothing: antialiased;
     padding: 7px 0 6px;
+    
 }
 .button.btn_next {
     position: relative;
@@ -139,6 +212,7 @@ a {
     position: relative;
     margin-left: 1px;
     margin-right: 38px;
+    
 }
 .btn_next.btn_next_kind_link.btn_next_font_cr:not(.btn_next_case_uc) .btn_next__text {
     display: block;
@@ -174,6 +248,103 @@ a {
     font-size: 30px;
     vertical-align: top;
     transition: box-shadow ease-out .3s;
+}
+.up{
+    width: 235px;
+    top: 240px;
+    position: absolute;
+    display: none;
+    left: 480px;
+    width: 210px;
+    height: 60px;
+    line-height: 60px;
+    text-align: left;
+}
+
+.label {
+    display: inline-block;
+    font-size: 36px;
+}
+.down{
+    position: absolute;
+    display: none;
+    left: 480px;
+    width: 210px;
+    height: 60px;
+    line-height: 60px;
+    text-align: left;
+    top: 300px;
+}
+.speaker.small {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    border-radius: 50%;
+    background-position: 0 0;
+}
+
+.btn_OK_up {
+    height: 50px;
+    padding: 2px 14px;
+    border-radius: 5px;
+    top: 5px;
+    right:-60px;
+    position: absolute;
+    z-index: 0;
+    font-size: 30px;
+    vertical-align: top;;
+    transition: box-shadow ease-out .3s;
+    background: #6ec3e2;
+    display: inline-block;
+    line-height: 60px;
+    text-align: left;
+
+}
+.btn_OK_down {
+    height: 50px;
+    padding: 2px 14px;
+    border-radius: 5px;
+    top: 5px;
+    right:-60px;
+    position: absolute;
+    z-index: 0;
+    font-size: 30px;
+    vertical-align: top;;
+    transition: box-shadow ease-out .3s;
+    background: #6ec3e2;
+    display: inline-block;
+    line-height: 60px;
+    text-align: left;
+
+}
+.btn_OK_down:hover {
+    cursor: pointer;
+}
+.btn_OK_up:hover {
+    cursor: pointer;
+}
+.text {
+    display: block;
+    white-space: nowrap;
+    font-size: 24px;
+    line-height: 28px;
+    padding: 8px 0 5px;
+    position: absolute;
+    left: 14px;
+    top: 2px;
+    color: #FFFFFF;
+}
+.placeholder {
+    display: block;
+    white-space: nowrap;
+    font-size: 24px;
+    line-height: 28px;
+    padding: 8px 0 5px;
+    text-align: left;
+    position: relative;
+}
+.pointerhand{
+    cursor: pointer;
 }
 * {
     -webkit-tap-highlight-color: transparent;
@@ -211,12 +382,44 @@ a {
     margin-top: -130px;
     margin-left: -130px;
 }
-@keyframes move{
+.play span {
+    position: absolute;
+    top: 50%;
+    font-size: 20px;
+    line-height: 20px;
+    margin-top: -10px;
+    left: 18px;
+    color: #fff;
+}
+@keyframes move2{
     from {
         height: 0px;
     }
-    
     to {
         height: 140px; 
     }
+}@keyframes move1{
+    from {
+        height: 0px;
+    }
+    to {
+        height: 280px; 
+    }
 }
+@keyframes moveball4{
+    from {left: 76px;}
+    to {left : 440px;}
+}
+@keyframes moveball3{
+    from {left: 52px;}
+    to {left : 420px;}
+}
+@keyframes moveball2{
+    from {left: 28px;}
+    to {left : 400px;}
+}
+@keyframes moveball1{
+    from {left: 4px;}
+    to {left : 380px;}
+}
+

@@ -11,8 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
-<body class="body"
-    style="background-image: url('https://i.pinimg.com/originals/fc/6e/19/fc6e19f0d91d5f344ce9a0dd6688b1dd.jpg') ; ">
+<body class="body"></body>
     <div class="main">
         <div class="uchiru_head card with_progress">
             <a class="Back" href="index.html">
@@ -23,40 +22,69 @@
             <div class="beads-wrapper">
                 <!--<div id="progress">-->
                 <div class="inner_progress">
-                    <i class="az_ball_0" id="bead0" style="left: 4px;"></i>
-                    <i class="az_ball_1" id="bead1" style="left: 28px;"></i>
-                    <i class="az_ball_2" id="bead2" style="left: 52px;"></i>
-                    <i class="az_ball_3" id="bead3" style="left: 76px;"></i>
-                    <i class="az_ball_4" id="bead4" style="left: 100px;"></i>
-                    <i class="az_ball_5" id="bead5" style="left: 124px;"></i>
+                    <i class="az_ball_1" id="ball1" style="left: 4px;"></i>
+                    <i class="az_ball_2" id="ball2" style="left: 28px;"></i>
+                    <i class="az_ball_3" id="ball3" style="left: 52px;"></i>
+                    <i class="az_ball_4" id="ball4" style="left: 76px;"></i>
+                    <!--<i class="az_ball_4" id="ball4" style="left: 100px;"></i>
+                    <i class="az_ball_5" id="ball5" style="left: 124px;"></i>-->
                 </div>
                 <!--</div>-->
             </div>
         </div>
-        <div class="scene">
-            <div class="line" style="margin-top: 10px; width: 960px; height: 500px;">
-                <div class="bg bg-bug">
-                    <div class="bug" id="bug"></div>
-                </div>
-
-                <div class="question with-sound" style="left: 420px; display: block;">
-                    <span class="speaker"></span>
-                    <span>Which way is the bug going?</span>
-                    <div style="text-align:center; padding-top: 40px;">
-                        <div class="button btn_next btn_next_kind_link btn_next_font_cr btn_next_color_blue pointerhand clickable"
-                            style="display: inline-block" ; id="sprite_1">
-                            <div class="button btn_next__placeholder" style="visibility: hidden;">Next</div>
-                            <div class="button btn_next__text">Next</div>
-                            <div class="button btn_next__icon"></div>
+        <div class="content">
+            <div class ="board">
+                <div class = "scene" id ="scene">
+                    <div class="bg bg-bug" id="task1">
+                        <div class="bug" id="obj1"></div>
+                    </div>
+                    <div class="bg bg-fly" id="task2" style="display: none;">
+                        <div class="fly" id="obj2"></div>
+                    </div>
+                    <div class="bg bg-ballon" id="task3" style="display: none;">
+                        <div class="ballon" id="obj3"></div>
+                    </div>
+                    <div class="bg bg-ball" id="task4" style="display: none;">
+                        <div class="basket" id="obj4"></div>
+                    </div>
+                    <div class="question with-sound" style="display: none;">
+                        <span class="speaker"></span>
+                        <span id="mySpan">Which way is the bug going?</span>
+                        <div style="text-align:center; padding-top: 40px;">
+                            <div class="button btn_next btn_next_kind_link btn_next_font_cr btn_next_color_blue pointerhand clickable"
+                                style="display: inline-block" ; id="sprite_1">
+                                <div class="button btn_next__placeholder" style="visibility: hidden;">Next</div>
+                                <div class="button btn_next__text">Next</div>
+                                <div class="button btn_next__icon"></div>
+                            </div>
                         </div>
                     </div>
-
-                </div>
-                <div class="btn_play">
-                    <div class="play">
-
+                    <div class="up" id = "up">
+                        <div class="label">
+                            <span class = "speaker small"></span>
+                            Up
+                        </div>
+                        <div class="btn_OK_up">
+                            <div class="placeholder">OK</div>
+                            <div class="text">OK</div>
+                        </div>
+                    </div>
+                    <div class="down" id = "down">
+                        <div class="label">
+                            <span class = "speaker small"></span>
+                            Down
+                        </div>
+                        <div class="btn_OK_down">
+                            <div class="placeholder">OK</div>
+                            <div class="text">OK</div>
+                        </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="btn_play">
+            <div class="play">
+                <span>start</span>
             </div>
         </div>
 

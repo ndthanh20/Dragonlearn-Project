@@ -160,6 +160,9 @@ body{
     animation-iteration-count: 1;
     animation-duration: 1.5s;
 }
+.arrow_down.arrow.arrow__inner__line{
+    background-color:#62B4DD ;
+}
 .Question {
     position: absolute;
     left: 60px;
@@ -169,6 +172,12 @@ body{
     height: 60px;
     text-align: center;
     font-size: 36px;
+    animation-name: refreshQuestion;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-duration: 0.5s;
 }
 .content {
     padding: 4px 0;
@@ -179,7 +188,13 @@ body{
     display: block;
     position: absolute;
 }
-
+.arrow_down{
+    left: 150px;
+    top: 430px;
+    display: block;
+    transform: rotate(180deg);
+    
+}
 
 @keyframes moveArrow{
     from{
@@ -236,4 +251,24 @@ body{
     height: 256px;
     margin-top: -130px;
     margin-left: -130px;
+}
+.autoMove {
+    animation-name: autoMoveFlag;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-delay: 0;
+    animation-timing-function: linear;
+}
+@keyframes autoMoveFlag {
+    from {
+        
+    }
+}
+@keyframes refreshQuestion {
+    from {
+        font-size: 0px;
+    }
+    to {
+        font-size: 36px;
+    }
 }

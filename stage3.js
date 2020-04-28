@@ -92,18 +92,14 @@ bar.onmousedown = function (event) {
         elem.style.visibility = "hidden";
 
         image_1.style.visibility = "visible";
-
     }
 
     function onMouseMove(event) {
 
-
         moveAt(event.clientY);
 
-
         if (endTask) {
-
-            
+         
             onMouseUp();
 
             var x=document.getElementById("task_1").querySelectorAll(".droppable1");
@@ -112,47 +108,35 @@ bar.onmousedown = function (event) {
                 x[i].style.visibility = "hidden";
             }
             document.getElementById("sprite_1").style.animationName = "sprite_1";
-
             document.getElementById("sprite_1").style.animationDuration = "2s";
-
             document.getElementById("sprite_1").style.animationFillMode = "both";
-
             document.getElementById("sprite_1").style.animationTimingFunction = "ease";
 
             document.getElementById("sprite_2").style.animationName = "sprite_2";
-
             document.getElementById("sprite_2").style.animationDuration = "2s";
-
             document.getElementById("sprite_2").style.animationFillMode = "both";
-
             document.getElementById("sprite_2").style.animationTimingFunction = "ease";
 
-
             document.getElementById("bead2").style.animationName = "ball1";
-
             document.getElementById("bead2").style.animationDelay = "2s";
-
             document.getElementById("bead2").style.webkitAnimationDuration = "2s";
-
             document.getElementById("bead2").style.animationTimingFunction = "ease";
-
             document.getElementById("bead2").style.animationFillMode = "both";
 
             document.getElementById("holder_1").querySelector("#first").style.visibility = "hiiden";
-
-            
+    
             setTimeout(function(){
                 document.getElementById("task_1").style.display = "none";
+
                 document.getElementById("task_2").style.display = "block";
+
                 bar = holder_1_2.querySelector('.bar2');
+
                 console.log(bar);
             },3000);
             
-
-
             return;
         }
-
 
         bar.style.visibility = "hidden";
 
@@ -163,7 +147,6 @@ bar.onmousedown = function (event) {
         if (!elemBelow) return;
 
         let droppableBelow = elemBelow.closest('.droppable1');
-
 
         if (currentDroppable != droppableBelow) {
 
@@ -194,7 +177,6 @@ bar.onmousedown = function (event) {
         else
             isPicture = false;
     }
-
 
     function onMouseUp() {
         document.removeEventListener('mouseup', onMouseUp);
