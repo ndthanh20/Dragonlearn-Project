@@ -3,9 +3,11 @@ let bar = holder_1.querySelector('.bar1');
 let isPicture = false;
 let endTask = false;
 let count = 1;
-var sceneNumber=0;
+var sceneNumber = 0;
 
 bar.onmousedown = function (event) {
+
+    console.log(bar);
 
     let shiftY = event.clientY - bar.getBoundingClientRect().top;
 
@@ -61,9 +63,7 @@ bar.onmousedown = function (event) {
                 }
 
                 bar.style.visibility = "hidden";
-
                 endTask = true;
-
                 return
             }
         bar.style.top = clientY - shiftY - 248 + 'px';
@@ -99,12 +99,12 @@ bar.onmousedown = function (event) {
         moveAt(event.clientY);
 
         if (endTask) {
-         
+
             onMouseUp();
 
-            var x=document.getElementById("task_1").querySelectorAll(".droppable1");
+            var x = document.getElementById("task_1").querySelectorAll(".droppable1");
 
-            for(var i=0 ; i<x.length; i++){
+            for (var i = 0; i < x.length; i++) {
                 x[i].style.visibility = "hidden";
             }
             document.getElementById("sprite_1").style.animationName = "sprite_1";
@@ -124,8 +124,8 @@ bar.onmousedown = function (event) {
             document.getElementById("bead2").style.animationFillMode = "both";
 
             document.getElementById("holder_1").querySelector("#first").style.visibility = "hiiden";
-    
-            setTimeout(function(){
+
+            setTimeout(function () {
                 document.getElementById("task_1").style.display = "none";
 
                 document.getElementById("task_2").style.display = "block";
@@ -133,8 +133,8 @@ bar.onmousedown = function (event) {
                 bar = holder_1_2.querySelector('.bar2');
 
                 console.log(bar);
-            },3000);
-            
+            }, 3000);
+
             return;
         }
 
@@ -149,20 +149,14 @@ bar.onmousedown = function (event) {
         let droppableBelow = elemBelow.closest('.droppable1');
 
         if (currentDroppable != droppableBelow) {
-
             if (currentDroppable) {
-
                 leaveDroppable(currentDroppable);
-
             }
-
             currentDroppable = droppableBelow;
-
 
             if (currentDroppable) {
                 enterDroppable(currentDroppable);
             }
-           
         }
     }
     function enterDroppable(elem) {
@@ -170,30 +164,27 @@ bar.onmousedown = function (event) {
         //elem.style.backgroundImage = "url('./Images/44.png')";
         elem.style.background = '#ffffcc';
     }
-
     function leaveDroppable(elem) {
         if (!isPicture)
             elem.style.backgroundImage = '';
         else
             isPicture = false;
     }
-
     function onMouseUp() {
         document.removeEventListener('mouseup', onMouseUp);
         document.removeEventListener('mousemove', onMouseMove);
     }
-
 };
 
 bar.ondragstart = function () {
     return false;
 };
-function playSound(){
-    if (!document.getElementById("movethebarup").hidden){
+function playSound() {
+    if (!document.getElementById("movethebarup").hidden) {
         var x = document.getElementById("up");
         x.play();
     }
-    else{
+    else {
         var x = document.getElementById("down");
         x.play();
     }

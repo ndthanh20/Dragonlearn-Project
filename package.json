@@ -1,0 +1,19 @@
+{
+  "name": "dragonlearnproject",
+  "version": "1.0.0",
+  "description": "Testing ",
+  "main": "stage1.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndthanh20/Dragonlearn-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ndthanh20/Dragonlearn-Project/issues"
+  },
+  "homepage": "https://github.com/ndthanh20/Dragonlearn-Project#readme"
+}
