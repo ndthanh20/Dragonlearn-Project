@@ -75,7 +75,7 @@ bar.onmousedown = function (event) {
 
         image_1.className = 'image_1';
 
-        var urlI = 'url("/Images/51_' + count + '.png")';
+        var urlI = 'url("./Images/51_' + count + '.png")';
 
         image_1.style.backgroundImage = urlI;
 
