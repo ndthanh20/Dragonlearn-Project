@@ -4,7 +4,8 @@
   "description": "Testing ",
   "main": "stage1.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "cypress:open": "cypress open"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ndthanh20/Dragonlearn-Project/issues"
   },
-  "homepage": "https://github.com/ndthanh20/Dragonlearn-Project#readme"
+  "homepage": "https://github.com/ndthanh20/Dragonlearn-Project#readme",
+  "devDependencies": {
+    "cypress": "^4.5.0"
+  }
 }
