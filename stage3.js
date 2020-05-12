@@ -61,16 +61,13 @@ bar.onmousedown = function (event) {
                     document.getElementById("movethebardown").hidden = true;
                     document.getElementById("movethebarup").hidden = false;
                 }
-
                 bar.style.visibility = "hidden";
                 endTask = true;
                 return
             }
         bar.style.top = clientY - shiftY - 248 + 'px';
-
     }
     function showPicture(elem) {
-
         var image_1 = document.createElement("div");
 
         image_1.className = 'image_1';
@@ -131,10 +128,8 @@ bar.onmousedown = function (event) {
                 document.getElementById("task_2").style.display = "block";
 
                 bar = holder_1_2.querySelector('.bar2');
-
-                console.log(bar);
             }, 3000);
-
+            
             return;
         }
 

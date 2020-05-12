@@ -374,7 +374,7 @@ a {
     height: 113px;
     background: url(13.png) no-repeat;
     margin: -57px 0 0 -35px;
-    background-image: url(/Images/25.png);
+    background-image: url(./Images/25.png);
 }
 .btn_play:hover {
     width: 256px;
