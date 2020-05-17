@@ -4,13 +4,20 @@ let endTask = false;
 let count = 1;
 var sceneNumber = 0;
 var task = 0, bar;
+var currHolder;
 
 var control = (function () {
     function moveBar() {
         let shiftY = event.clientY - bar.getBoundingClientRect().top;
         switch (task){
             case 1:
-                
+                var square = ".square";
+                break;
+            case 2:
+                var square = ".square2";
+                break;
+            default:
+                break;
         }
         //bar.style.position = 'absolute';
         document.addEventListener('mousemove', onMouseMove);
@@ -21,8 +28,12 @@ var control = (function () {
                 if (document.getElementById("movethebarup").hidden == false) {
                     bar.style.top = 170 + 'px';
                     onMouseUp();
+                    
+                    currHolder.nextElementSibling.append(bar);
 
-                    document.getElementById("holder_2").append(bar);
+                    currHolder = currHolder.nextElementSibling;
+
+                    console.log(bar);
 
                     showPicture(currentDroppable);
 
@@ -44,8 +55,16 @@ var control = (function () {
                 }
             if (clientY - shiftY - 248 > 340)
                 if (document.getElementById("movethebardown").hidden == false) {
-                    bar.style.top = 340 + 'px';
+                    bar.style.top = 170 + 'px';
                     onMouseUp();
+
+                    if(task!=1){
+                        currHolder.nextElementSibling.append(bar);
+
+                        currHolder = currHolder.nextElementSibling;
+
+                        console.log(currHolder);
+                    }
 
                     showPicture(currentDroppable);
 
@@ -59,8 +78,11 @@ var control = (function () {
                         document.getElementById("movethebardown").hidden = true;
                         document.getElementById("movethebarup").hidden = false;
                     }
-                    bar.style.visibility = "hidden";
-                    endTask = true;
+                    if(count==3 && task==1 || count==7 && task==2)
+                        {
+                            endTask = true;
+                            bar.style.visibility = "hidden";
+                        }
                     return
                 }
                 else {
@@ -73,7 +95,16 @@ var control = (function () {
             var image_1 = document.createElement("div");
             image_1.className = 'image_1';
 
-            var urlI = 'url("./Images/51_' + count + '.png")';
+            switch(task){
+                case 1:
+                    var urlI = 'url("./Images/51_' + count + '.png")';
+                    break;
+                case 2:
+                    var urlI = 'url("./Images/53_' + count + '.png")';
+                    break;
+                default:
+                    break;
+            }
 
             image_1.style.backgroundImage = urlI;
 
@@ -94,7 +125,7 @@ var control = (function () {
         function onMouseMove(event) {
             moveAt(event.clientY);
             if (endTask) {
-                var x = document.getElementById("task_1").querySelectorAll(".square");
+                var x = document.getElementById("task_1").querySelectorAll(square);
 
                 for (var i = 0; i < x.length; i++) {
                     x[i].style.visibility = "hidden";
@@ -138,7 +169,7 @@ var control = (function () {
 
             if (!elemBelow) return;
 
-            let droppableBelow = elemBelow.closest('.square');
+            let droppableBelow = elemBelow.closest(square);
 
             if (currentDroppable != droppableBelow) {
                 if (currentDroppable) {
@@ -178,9 +209,11 @@ var control = (function () {
         switch (task) {
             case 1:
                 bar = holder_1.querySelector('.bar1');
+                currHolder = document.getElementById("holder_1");
                 break;
             case 2:
                 bar = holder_1_2.querySelector('.bar2');
+                currHolder = document.getElementById("holder_1_2");
                 break;
             default:
                 break;
@@ -188,6 +221,9 @@ var control = (function () {
         bar.ondragstart = function () {
             return false;
         };
+        endTask =false;
+        count=1;
+        
         bar.addEventListener("mousedown", moveBar);
     }
     return {
