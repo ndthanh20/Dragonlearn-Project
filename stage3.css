@@ -14,7 +14,7 @@ a {
     text-align: center;
     margin-left: 0%;
 }
-.droppable1 {
+.square {
     background-image: url(./Images/43.png);
     background-repeat: no-repeat;
     widows: 180px;
@@ -26,8 +26,8 @@ a {
     background-position-y: 0px;
     
 }
-.droppable2 {
-    background-image: url(./Images/43.png);
+.square2 {
+    background-image: url(./Images/44.png);
     background-repeat: no-repeat;
     width: 120px;
     height: 180px;
@@ -36,7 +36,6 @@ a {
     background-color: #c9c9c9;
     background-position-x: 0px;
     background-position-y: 0px;
-    
 }
 .holder1{
     display: inline-block;
@@ -74,7 +73,6 @@ a {
     top: 170px;
     cursor: pointer;
 }
-
 .scene{
     position: relative;
     min-height: 100px;
@@ -96,6 +94,7 @@ a {
     background-position-y: 0px;
     margin-bottom: 15px;
     margin-top: 5px;
+    cursor: pointer;
 }
 .string{
     font-size: 50px;
@@ -152,6 +151,7 @@ a {
 .main{
     width:960px;
     height: 700px;
+    filter: blur(2px);
     border: 1px solid rgb(177, 177, 177);
     border-radius: 10px;
     margin-left:17%;
@@ -175,20 +175,47 @@ a {
     from {left: 52px;}
     to {left : 440px;}
 }
-.btn_play{
+.btn_play {
     position: absolute;
     z-index: 100;
-    top: 60%;
+    top: 50%;
     left: 50%;
     width: 246px;
     height: 246px;
-    margin: -166px 0 0 -166px;
+    margin: -130px 0 0 -130px;
     border-radius: 200px;
     background-color: rgba(184,0,161,.1);
     border: 43px solid rgba(255,255,255,.75);
-    -webkit-transition: linear .3s;
-    transition: linear .2s;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+    transition-delay: 0s; 
     cursor: pointer;
+}
+.play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 112px;
+    height: 113px;
+    background: url(13.png) no-repeat;
+    margin: -57px 0 0 -35px;
+    background-image: url(./Images/25.png);
+}
+.btn_play:hover {
+    width: 256px;
+    height: 256px;
+    margin-top: -130px;
+    margin-left: -130px;
+}
+.play span {
+    position: absolute;
+    top: 50%;
+    font-size: 20px;
+    line-height: 20px;
+    margin-top: -10px;
+    left: 18px;
+    color: #fff;
 }
 .triangle{
     position: absolute;
