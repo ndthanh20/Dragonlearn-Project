@@ -35,12 +35,12 @@ body{
     border-bottom: 1px solid rgba(150,150,150,0.29);
 }
 
-.Back{
+.back{
     width: 70px;
     margin-bottom: -10px;
     margin-top: 5px;
 }
-.BackH4{
+.backH4{
     color: aqua;
 }
 .beads-wrapper {
@@ -92,7 +92,7 @@ body{
     top: 0;
 }
 
-.Flag {
+.flag {
     background-image: url(./Images/35.png);
     height: 100%;
     width: 200px;
@@ -103,7 +103,7 @@ body{
     top: 0px;
     display: inline-block;
 }
-.MoveFlag {
+.moveFlag {
     background-image: url(./Images/23.png);
     position: absolute;
     left: 850px;
@@ -113,12 +113,12 @@ body{
     left: 70px;
     display: inline-block;
 }
-.arrow__inner {
+.arrow .__inner {
     position: absolute;
     width: 140px;
     height: 140px;
 }
-.arrow__inner__pointer {
+.arrow .__inner .__pointer {
     display: none;
     overflow: hidden;
     width: 100px;
@@ -133,7 +133,7 @@ body{
     animation-iteration-count: 1;
     animation-duration: 1.5s;
 }
-.arrow__inner__pointer__triangle {
+.arrow .__inner .__pointer .__triangle {
     position: absolute;
     background-color: #DD6188;
     -moz-transform: rotate(45deg);
@@ -145,7 +145,7 @@ body{
     bottom: -32px; 
     left: 20px;
 }
-.arrow__inner__line {
+.arrow .__inner .__line {
     display: none;
     position: absolute;
     background-color: #DD6188;
