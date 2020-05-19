@@ -29,7 +29,7 @@ var control = (function () {
         taskNext = document.getElementById(task);
         taskNext.style.display = "inline-block";
     }
-    var MoveBall = function () {
+    var moveBall = function () {
         var ballStr = "ball" + numberBall;
         var ball = document.getElementById(ballStr);
         var ballAni = "move" + ballStr;
@@ -122,7 +122,7 @@ var control = (function () {
                 document.querySelector(".up").style.display = "none";
                 document.querySelector(".btn_OK_up").style.backgroundColor = "#6ec3e2";
                 setUpTask();
-                MoveBall();
+                moveBall();
                 handleStart();
                 showObject(document.getElementById("fly"));
             }, 4000)
@@ -154,7 +154,7 @@ var control = (function () {
                 count = 0;
                 document.querySelector(".down").style.display = "none";
                 document.querySelector(".btn_OK_down").style.backgroundColor = "#6ec3e2";
-                MoveBall();
+                moveBall();
                 setUpTask();
                 handleStart();
                 showObject(document.getElementById("fly"));
