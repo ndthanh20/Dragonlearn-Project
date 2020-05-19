@@ -63,7 +63,6 @@ var control = (function () {
 
         }, true);
     }
-
     var handleStart = function () {
         var btn_play = document.querySelector(".btn_play");
         btn_play.parentNode.removeChild(btn_play);

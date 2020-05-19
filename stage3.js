@@ -9,7 +9,7 @@ var currHolder;
 var control = (function () {
     function moveBar() {
         let shiftY = event.clientY - bar.getBoundingClientRect().top;
-        switch (task){
+        switch (task) {
             case 1:
                 var square = ".square";
                 break;
@@ -28,14 +28,12 @@ var control = (function () {
                 if (document.getElementById("movethebarup").hidden == false) {
                     bar.style.top = 170 + 'px';
                     onMouseUp();
-                    
+
                     currHolder.nextElementSibling.append(bar);
 
                     currHolder = currHolder.nextElementSibling;
 
-                    console.log(bar);
-
-                    showPicture(currentDroppable);
+                    showPictureUp(currentDroppable);
 
                     isPicture = true;
 
@@ -58,15 +56,12 @@ var control = (function () {
                     bar.style.top = 170 + 'px';
                     onMouseUp();
 
-                    if(task!=1){
+                    if (currHolder.nextElementSibling) {
                         currHolder.nextElementSibling.append(bar);
 
                         currHolder = currHolder.nextElementSibling;
-
-                        console.log(currHolder);
                     }
-
-                    showPicture(currentDroppable);
+                    showPictureBelow(currentDroppable);
 
                     isPicture = true;
 
@@ -78,11 +73,10 @@ var control = (function () {
                         document.getElementById("movethebardown").hidden = true;
                         document.getElementById("movethebarup").hidden = false;
                     }
-                    if(count==3 && task==1 || count==7 && task==2)
-                        {
-                            endTask = true;
-                            bar.style.visibility = "hidden";
-                        }
+                    if (count == 3 && task == 1 || count == 7 && task == 2) {
+                        endTask = true;
+                        bar.style.visibility = "hidden";
+                    }
                     return
                 }
                 else {
@@ -91,30 +85,29 @@ var control = (function () {
                 }
             bar.style.top = clientY - shiftY - 248 + 'px';
         }
-        function showPicture(elem) {
+        function showPictureUp(elem) {
             var image_1 = document.createElement("div");
-            image_1.className = 'image_1';
-
-            switch(task){
+            switch (task) {
                 case 1:
                     var urlI = 'url("./Images/51_' + count + '.png")';
+                    image_1.className = 'up';
+                    image_1.style.width = 180 + 'px';
+                    image_1.style.height = 180 + 'px';
+                    image_1.id = 'sprite_' + count;
                     break;
                 case 2:
                     var urlI = 'url("./Images/53_' + count + '.png")';
+                    image_1.className = 'up';
+                    image_1.style.width = 120 + 'px';
+                    image_1.style.height = 180 + 'px';
+                    image_1.id = 'sprite_2_' + count;
                     break;
                 default:
                     break;
             }
-
             image_1.style.backgroundImage = urlI;
 
-            image_1.id = 'sprite_' + count;
-
             count += 1;
-
-            image_1.style.width = 180 + 'px';
-
-            image_1.style.height = 180 + 'px';
 
             elem.append(image_1);
 
@@ -122,11 +115,40 @@ var control = (function () {
 
             image_1.style.visibility = "visible";
         }
+        function showPictureBelow(elem) {
+            var image_1 = document.createElement("div");
+            switch (task) {
+                case 1:
+                    var urlI = 'url("./Images/51_' + count + '.png")';
+                    image_1.className = 'below';
+                    image_1.style.width = 180 + 'px';
+                    image_1.style.height = 180 + 'px';
+                    image_1.id = 'sprite_' + count;
+                    break;
+                case 2:
+                    var urlI = 'url("./Images/53_' + count + '.png")';
+                    image_1.className = 'below';
+                    image_1.style.width = 120 + 'px';
+                    image_1.style.height = 180 + 'px';
+            }
+            image_1.style.backgroundImage = urlI;
+            image_1.style.visibility = "visible";
+
+            count += 1;
+
+            elem.append(image_1);
+            elem.style.visibility = "hidden";
+        }
         function onMouseMove(event) {
             moveAt(event.clientY);
             if (endTask) {
-                var x = document.getElementById("task_1").querySelectorAll(square);
-
+                switch (task) {
+                    case 1:
+                        var x = document.getElementById("task_1").querySelectorAll(square);
+                        break;
+                    case 2:
+                        var x = document.getElementById("task_2").querySelectorAll(square);
+                }
                 for (var i = 0; i < x.length; i++) {
                     x[i].style.visibility = "hidden";
                 }
@@ -145,6 +167,11 @@ var control = (function () {
                 document.getElementById("bead2").style.webkitAnimationDuration = "2s";
                 document.getElementById("bead2").style.animationTimingFunction = "ease";
                 document.getElementById("bead2").style.animationFillMode = "both";
+                document.getElementById("bead2").style.animationName = "ball1";
+                document.getElementById("bead2").style.animationDelay = "2s";
+                document.getElementById("bead2").style.webkitAnimationDuration = "2s";
+                document.getElementById("bead2").style.animationTimingFunction = "ease";
+                document.getElementById("bead2").style.animationFillMode = "both";
 
                 document.getElementById("holder_1").querySelector("#first").style.visibility = "hiiden";
 
@@ -158,7 +185,6 @@ var control = (function () {
                     document.getElementById("main").style.filter = "blur(2px)";
                     setUpEventListener();
                 }, 3000);
-
                 return;
             }
             bar.style.visibility = "hidden";
@@ -221,9 +247,9 @@ var control = (function () {
         bar.ondragstart = function () {
             return false;
         };
-        endTask =false;
-        count=1;
-        
+        endTask = false;
+        count = 1;
+
         bar.addEventListener("mousedown", moveBar);
     }
     return {
