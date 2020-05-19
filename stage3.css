@@ -23,13 +23,23 @@ a {
     display: block;
     background-color: #c9c9c9;
     background-position-x: 0px;
-    background-position-y: 0px;
-    
+    background-position-y: 0px; 
 }
 .square2 {
     background-image: url(./Images/44.png);
     background-repeat: no-repeat;
     width: 120px;
+    height: 180px;
+    border-radius: 5px;
+    display: block;
+    background-color: #c9c9c9;
+    background-position-x: 0px;
+    background-position-y: 0px;
+}
+.square3 {
+    background-image: url(./Images/45.png);
+    background-repeat: no-repeat;
+    width: 72px;
     height: 180px;
     border-radius: 5px;
     display: block;
@@ -49,6 +59,12 @@ a {
     width: 120px;
     height: 360px;
 }
+.holder3{
+    display: inline-block;
+    position: relative;
+    width: 72px;
+    height: 360px;
+}
 .bar1{
     width: 180px;
     height: 20px;
@@ -63,6 +79,18 @@ a {
 }
 .bar2{
     width: 120px;
+    height: 20px;
+    display: block;
+    background-image: url(./Images/63.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0px;
+    top: 170px;
+    cursor: pointer;
+}
+.bar3{
+    width: 72px;
     height: 20px;
     display: block;
     background-image: url(./Images/63.png);
@@ -158,22 +186,32 @@ a {
     margin-top:50px;
     background-color: rgb(255, 255, 255);
 }
-.image_1{
-    position: relative;
-    
+.up{
+    position: relative; 
 }
-@keyframes sprite_1 {
+.below{
+    position: relative;
+}
+@keyframes up {
     from {top: 0px; }
     to {top: 90px; }
 }
 
-@keyframes sprite_2 {
+@keyframes below {
     from {top: 0px;}
     to {top: -90px; }
 }
-@keyframes ball1{
+@keyframes moveball2{
     from {left: 52px;}
     to {left : 440px;}
+}
+@keyframes moveball1{
+    from {left: 28px;}
+    to {left : 420px;}
+}
+@keyframes moveball0{
+    from {left: 4px;}
+    to {left: 400px;}
 }
 .btn_play {
     position: absolute;

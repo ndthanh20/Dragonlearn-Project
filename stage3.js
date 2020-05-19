@@ -5,6 +5,7 @@ let count = 1;
 var sceneNumber = 0;
 var task = 0, bar;
 var currHolder;
+var numberBall = 2;
 
 var control = (function () {
     function moveBar() {
@@ -15,6 +16,9 @@ var control = (function () {
                 break;
             case 2:
                 var square = ".square2";
+                break;
+            case 3:
+                var square = ".square3";
                 break;
             default:
                 break;
@@ -73,7 +77,7 @@ var control = (function () {
                         document.getElementById("movethebardown").hidden = true;
                         document.getElementById("movethebarup").hidden = false;
                     }
-                    if (count == 3 && task == 1 || count == 7 && task == 2) {
+                    if (count == 3 && task == 1 || count == 7 && task == 2 || count == 11 && task == 3) {
                         endTask = true;
                         bar.style.visibility = "hidden";
                     }
@@ -93,14 +97,18 @@ var control = (function () {
                     image_1.className = 'up';
                     image_1.style.width = 180 + 'px';
                     image_1.style.height = 180 + 'px';
-                    image_1.id = 'sprite_' + count;
                     break;
                 case 2:
                     var urlI = 'url("./Images/53_' + count + '.png")';
                     image_1.className = 'up';
                     image_1.style.width = 120 + 'px';
                     image_1.style.height = 180 + 'px';
-                    image_1.id = 'sprite_2_' + count;
+                    break;
+                case 3:
+                    var urlI = 'url("./Images/57_' + count + '.png")';
+                    image_1.className = 'up';
+                    image_1.style.width = 72 + 'px';
+                    image_1.style.height = 180 + 'px';
                     break;
                 default:
                     break;
@@ -123,13 +131,20 @@ var control = (function () {
                     image_1.className = 'below';
                     image_1.style.width = 180 + 'px';
                     image_1.style.height = 180 + 'px';
-                    image_1.id = 'sprite_' + count;
                     break;
                 case 2:
                     var urlI = 'url("./Images/53_' + count + '.png")';
                     image_1.className = 'below';
                     image_1.style.width = 120 + 'px';
                     image_1.style.height = 180 + 'px';
+                    break;
+                case 3:
+                    var urlI = 'url("./Images/57_' + count + '.png")';
+                    image_1.className = 'below';
+                    image_1.style.width = 72 + 'px';
+                    image_1.style.height = 180 + 'px';
+                default:
+                    break;
             }
             image_1.style.backgroundImage = urlI;
             image_1.style.visibility = "visible";
@@ -138,6 +153,16 @@ var control = (function () {
 
             elem.append(image_1);
             elem.style.visibility = "hidden";
+        }
+        function moveBall() {
+            var ballStr = "ball" + numberBall;
+            var ball = document.getElementById(ballStr);
+            var ballAni = "move" + ballStr;
+            console.log(ballAni);
+            ball.style.animationName = ballAni;
+            ball.style.animationDuration = "1.5s";
+            ball.style.animationFillMode = "forwards";
+            numberBall--;
         }
         function onMouseMove(event) {
             moveAt(event.clientY);
@@ -148,38 +173,48 @@ var control = (function () {
                         break;
                     case 2:
                         var x = document.getElementById("task_2").querySelectorAll(square);
+                        break;
+                    case 3:
+                        var x = document.getElementById("task_3").querySelectorAll(square);
+                        break;
+                    default:
+                        break;
                 }
                 for (var i = 0; i < x.length; i++) {
                     x[i].style.visibility = "hidden";
                 }
-                document.getElementById("sprite_1").style.animationName = "sprite_1";
-                document.getElementById("sprite_1").style.animationDuration = "2s";
-                document.getElementById("sprite_1").style.animationFillMode = "both";
-                document.getElementById("sprite_1").style.animationTimingFunction = "ease";
-
-                document.getElementById("sprite_2").style.animationName = "sprite_2";
-                document.getElementById("sprite_2").style.animationDuration = "2s";
-                document.getElementById("sprite_2").style.animationFillMode = "both";
-                document.getElementById("sprite_2").style.animationTimingFunction = "ease";
-
-                document.getElementById("bead2").style.animationName = "ball1";
-                document.getElementById("bead2").style.animationDelay = "2s";
-                document.getElementById("bead2").style.webkitAnimationDuration = "2s";
-                document.getElementById("bead2").style.animationTimingFunction = "ease";
-                document.getElementById("bead2").style.animationFillMode = "both";
-                document.getElementById("bead2").style.animationName = "ball1";
-                document.getElementById("bead2").style.animationDelay = "2s";
-                document.getElementById("bead2").style.webkitAnimationDuration = "2s";
-                document.getElementById("bead2").style.animationTimingFunction = "ease";
-                document.getElementById("bead2").style.animationFillMode = "both";
-
-                document.getElementById("holder_1").querySelector("#first").style.visibility = "hiiden";
-
+                var up = document.getElementsByClassName("up");
+                for (var i = 0; i < up.length; i++) {
+                    up[i].style.animationName = "up";
+                    console.log(up[i].style.animationName);
+                    up[i].style.animationDuration = "2s";
+                    up[i].style.animationFillMode = "both";
+                    up[i].style.animationTimingFunction = "ease";
+                }
+                var below = document.getElementsByClassName("below");
+                for (var i = 0; i < below.length; i++) {
+                    below[i].style.animationName = "below";
+                    below[i].style.animationDuration = "2s";
+                    below[i].style.animationFillMode = "both";
+                    below[i].style.animationTimingFunction = "ease";
+                }
+                moveBall();
                 setTimeout(function () {
-                    document.getElementById("task_1").style.display = "none";
-
-                    document.getElementById("task_2").style.display = "block";
-
+                    switch (task) {
+                        case 1:
+                            document.getElementById("task_1").style.display = "none";
+                            document.getElementById("task_2").style.display = "block";
+                            break;
+                        case 2:
+                            document.getElementById("task_2").style.display = "none";
+                            document.getElementById("task_3").style.display = "block";
+                            break;
+                        case 3:
+                            window.location.href = 'completeStage.html';
+                            break;
+                        default:
+                            break;
+                    }
                     document.querySelector(".btn_play").style.display = "block";
 
                     document.getElementById("main").style.filter = "blur(2px)";
@@ -241,6 +276,9 @@ var control = (function () {
                 bar = holder_1_2.querySelector('.bar2');
                 currHolder = document.getElementById("holder_1_2");
                 break;
+            case 3:
+                bar = holder_1_3.querySelector('.bar3');
+                currHolder = document.getElementById("holder_1_3");
             default:
                 break;
         }

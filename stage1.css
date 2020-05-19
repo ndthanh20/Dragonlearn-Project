@@ -272,3 +272,12 @@ body{
         font-size: 36px;
     }
 }
+.play span {
+    position: absolute;
+    top: 50%;
+    font-size: 20px;
+    line-height: 20px;
+    margin-top: -10px;
+    left: 18px;
+    color: #fff;
+}
