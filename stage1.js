@@ -67,8 +67,8 @@ var control = (function () {
         var btn_play = document.querySelector(".btn_play");
         btn_play.parentNode.removeChild(btn_play);
         document.getElementById("scene").style.filter = "none";
-        document.querySelector(".arrow__inner__line").style.display = "block";
-        document.querySelector(".arrow__inner__pointer").style.display = "block";
+        document.querySelector(".__line").style.display = "block";
+        document.querySelector(".__pointer").style.display = "block";
         setTimeout(handleMoveFlag, 1500);
     }
     var setUpEventListener = function () {
