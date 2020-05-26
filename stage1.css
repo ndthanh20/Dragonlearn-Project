@@ -5,6 +5,16 @@ body{
     background-repeat: none; 
     background-size: auto;
 }
+.box{
+    z-index: 0;
+    position: relative;
+    margin: 15px auto 20px;
+    width: 960px;
+    min-height: 600px;
+    border-radius: 15px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 19px 0px rgba(0,0,0,0.5), 0px 2px 4px 0px rgba(0,0,0,0.5);
+}
 .board {
     text-align: center;
     position: relative;
@@ -14,14 +24,6 @@ body{
     line-height: 1.5;
     width: 960px;
     min-height: 483px;
-}
-.uchiru-place {
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    padding-top: 1px;
-    margin-top: -1px;
-    line-height: 1.5;
 }
 .scene{
     text-align: center;
@@ -34,7 +36,6 @@ body{
 .uchiru_head card with_progress{
     border-bottom: 1px solid rgba(150,150,150,0.29);
 }
-
 .back{
     width: 70px;
     margin-bottom: -10px;
@@ -74,24 +75,6 @@ body{
     transition: left 200ms linear;
     -webkit-transition: left 200ms linear;
 }
-.box{
-    z-index: 0;
-    position: relative;
-    margin: 15px auto 20px;
-    width: 960px;
-    min-height: 600px;
-    border-radius: 15px;
-    background: #FFFFFF;
-    box-shadow: 0px 2px 19px 0px rgba(0,0,0,0.5), 0px 2px 4px 0px rgba(0,0,0,0.5);
-}
-
-.uchiru-head__right-group {
-    display: inline-block;
-    position: absolute;
-    right: 20px;
-    top: 0;
-}
-
 .flag {
     background-image: url(./Images/35.png);
     height: 100%;
@@ -104,6 +87,7 @@ body{
     display: inline-block;
 }
 .moveFlag {
+    cursor: pointer;
     background-image: url(./Images/23.png);
     position: absolute;
     left: 850px;
@@ -112,6 +96,83 @@ body{
     top: 200px;
     left: 70px;
     display: inline-block;
+}
+.hand{
+    position: absolute;
+    left: 669px;
+    top: 130px;
+    width: 190px;
+    height: 405px;
+    pointer-events: none;
+    z-index: 4;
+    background-image: url(https://content.dragonlearn.in/128633/1131/83.svg);
+}
+.ball{
+    background-image: url(https://content.dragonlearn.in/128633/1131/81.svg),url(./Images/83.png)!important;
+    height: 100%;
+    width: 220px;
+    background-position: 20px 130px, center;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 650px;
+    top: 0px;
+    display: inline-block;
+}
+.ballObj{
+    cursor: pointer;
+    background-image: url(./Images/33.png);
+    position: absolute;
+    width: 82px;
+    height: 82px;
+    top: 200px;
+    left: 120px;
+    display: inline-block;
+}
+.ballon{
+    background-image: url(./Images/83.png);
+    height: 100%;
+    width:  220px;
+    background-position: center, center;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 530px;
+    display: inline-block;
+}
+.ballonObj{
+    cursor: pointer;
+    background-image: url(./Images/66.png);
+    position: absolute;
+    width: 140px;
+    height: 280px;
+    top: 130px;
+    left: 40px;
+    display: inline-block;
+}
+.rocket{
+    background-image: url(./Images/37.png);
+    height: 100%;
+    width:  220px;
+    background-position: center, center;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 530px;
+    display: inline-block;
+}
+.rocketObj{
+    cursor: pointer;
+    background-image: url(./Images/27.png);
+    position: absolute;
+    width: 140px;
+    height: 280px;
+    top: 130px;
+    left: 40px;
+    display: inline-block;
+}
+.arrow {
+    left: 500px;
+    top: 200px;
+    display: block;
+    position: absolute;
 }
 .arrow .__inner {
     position: absolute;
@@ -160,15 +221,11 @@ body{
     animation-iteration-count: 1;
     animation-duration: 1.5s;
 }
-.arrow_down.arrow.arrow__inner__line{
-    background-color:#62B4DD ;
-}
 .Question {
     position: absolute;
     left: 60px;
     width: 380px;
     line-height: 60px;
-    top: 280px;
     height: 60px;
     text-align: center;
     font-size: 36px;
@@ -182,20 +239,12 @@ body{
 .content {
     padding: 4px 0;
 }
-.arrow {
-    left: 500px;
-    top: 200px;
-    display: block;
-    position: absolute;
-}
 .arrow_down{
     left: 150px;
     top: 430px;
-    display: block;
+    display: none;
     transform: rotate(180deg);
-    
 }
-
 @keyframes moveArrow{
     from{
         bottom: 60px;
@@ -212,13 +261,9 @@ body{
         height: 90px;
     }
 }
-
-
-
 .arrow__inner__pointer:active{
     bottom: 20px;
 }
-
 .btn_play {
     position: absolute;
     z-index: 100;
@@ -251,18 +296,6 @@ body{
     height: 256px;
     margin-top: -130px;
     margin-left: -130px;
-}
-.autoMove {
-    animation-name: autoMoveFlag;
-    animation-duration: 1.5s;
-    animation-fill-mode: forwards;
-    animation-delay: 0;
-    animation-timing-function: linear;
-}
-@keyframes autoMoveFlag {
-    from {
-        
-    }
 }
 @keyframes refreshQuestion {
     from {

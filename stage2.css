@@ -153,13 +153,23 @@ a {
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
 }
+.grid{
+    position: absolute;
+    z-index: 4;
+    display: inline-block;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-image: url('./Images/82.png');
+}
 .basket{
     width: 140px;
     background-image: url('./Images/62.png');
     position: absolute;
     z-index: 3;
     top: 0px;
-    left: 80px;
+    left: 90px;
     display: inline-block;
     transform: rotate(180deg);
     animation-delay: 0s;

@@ -2,12 +2,7 @@ var control = (function () {
     var count = 0;
     var number = 0;
     var numberBall = 4;
-    var objCurrent;
-    var setUpObject = function () {
-        number++;
-        var obj = "obj" + number;
-        objCurrent = document.getElementById(obj);
-    }
+    var objCurrent, taskCur, taskNext;
     var setContent = function () {
         console.log(number);
         if (number == 0)
@@ -18,9 +13,19 @@ var control = (function () {
             document.getElementById("mySpan").textContent = "Which way is the hot air ballon going?"
         if (number == 3)
             document.getElementById("mySpan").textContent = "Which way is the basket going?"
-
     }
-    var taskCur, taskNext;
+    var setUpObject = function () {
+        number++;
+        var obj = "obj" + number;
+        objCurrent = document.getElementById(obj);
+    }
+    var showObject = function () {
+        if (number != 3)
+            objCurrent.style.animationName = "move2";
+        else {
+            objCurrent.style.animationName = "move1";
+        }
+    }
     var setUpTask = function () {
         var task = "task" + number;
         taskCur = document.getElementById(task);
@@ -29,19 +34,8 @@ var control = (function () {
         taskNext = document.getElementById(task);
         taskNext.style.display = "inline-block";
     }
-    var moveBall = function () {
-        var ballStr = "ball" + numberBall;
-        var ball = document.getElementById(ballStr);
-        var ballAni = "move" + ballStr;
-        console.log(ballAni);
-        ball.style.animationName = ballAni;
-        ball.style.animationDuration = "1.5s";
-        ball.style.animationFillMode = "forwards";
-        numberBall--;
-    }
     var handleNext = function () {
         document.getElementById("sprite_1").addEventListener("click", function () {
-            //var bug = document.getElementById("bug")
             document.getElementById("sprite_1").style.display = "none";
             if (count == 0) {
                 objCurrent.animate([
@@ -70,6 +64,18 @@ var control = (function () {
 
         });
     }
+    //Di chuyen qua bong thanh diem sau khi hoan thanh 1 nhiem vu
+    var moveBall = function () {
+        var ballStr = "ball" + numberBall;
+        var ball = document.getElementById(ballStr);
+        var ballAni = "move" + ballStr;
+        console.log(ballAni);
+        ball.style.animationName = ballAni;
+        ball.style.animationDuration = "1.5s";
+        ball.style.animationFillMode = "forwards";
+        numberBall--;
+    }
+    //Set lai nhiem vu tiep theo
     var setDisplay = function () {
         document.querySelector(".question").style.display = "none";
         if (count == 0) {
@@ -81,15 +87,7 @@ var control = (function () {
             document.querySelector(".btn_OK_down").style.display = "none";
         }
     }
-    var showObject = function () {
-
-        if (number != 3)
-            objCurrent.style.animationName = "move2";
-        else {
-            console.log(objCurrent);
-            objCurrent.style.animationName = "move1";
-        }
-    }
+    //Xu li sau khi an nut Start
     var handleStart = function () {
         var btn_play = document.querySelector(".btn_play");
         if (btn_play)
@@ -102,12 +100,11 @@ var control = (function () {
         showObject(objCurrent);
         setTimeout(handleNext(objCurrent), 1500);
     }
+    //Xu li sau khi nhan nut Ok Up
     var handleClickOkUp = function () {
-
         if (count === 0) {
             document.querySelector(".btn_OK_up").style.backgroundColor = "#8fbf82";
             setTimeout(function () {
-
                 setDisplay();
                 objCurrent.animate([
                     { bottom: 200 + "px" },
@@ -134,6 +131,7 @@ var control = (function () {
             }, 1000)
         }
     }
+    //Xu li sau khi nhan nut Ok Down
     var handleClickOkDown = function () {
 
         if (count === 1) {
@@ -141,16 +139,25 @@ var control = (function () {
             setTimeout(function () {
 
                 setDisplay();
-                objCurrent.animate([
-                    { top: 200 + "px" },
-                    { top: 350 + "px" }
-                ], {
-                    duration: 1500,
-                    fill: "forwards"
-                })
+                if (number == 2)
+                    objCurrent.animate([
+                        { top: 200 + "px" },
+                        { top: 350 + "px" }
+                    ], {
+                        duration: 1500,
+                        fill: "forwards"
+                    })
+                else
+                    objCurrent.animate([
+                        { top: 200 + "px" },
+                        { top: 420 + "px" }
+                    ], {
+                        duration: 1500,
+                        fill: "forwards"
+                    })
             }, 1000)
             setTimeout(function () {
-                if(number==4) window.location.href = 'completeStage.html';
+                if (number == 4) window.location.href = 'completeStage.html';
                 count = 0;
                 document.querySelector(".down").style.display = "none";
                 document.querySelector(".btn_OK_down").style.backgroundColor = "#6ec3e2";
@@ -169,7 +176,6 @@ var control = (function () {
     }
     var setUpEventListener = function () {
         document.querySelector(".btn_play").addEventListener("click", handleStart);
-        // document.getElementById("sprite_1").addEventListener("click", nextFunction);
         document.querySelector(".btn_OK_up").addEventListener("click", handleClickOkUp);
         document.querySelector(".btn_OK_down").addEventListener("click", handleClickOkDown);
     }
